@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "contact_id"],
+  "properties": {
+    "organization_id": { "type": "string" },
+    "contact_id": { "type": "string" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "source_contact_id", "target_contact_id", "expected_source_revision", "expected_target_revision", "idempotency_key"],
+  "properties": {
+    "organization_id": { "type": "string" },
+    "source_contact_id": { "type": "string" },
+    "target_contact_id": { "type": "string" },
+    "expected_source_revision": { "type": "string" },
+    "expected_target_revision": { "type": "string" },
+    "idempotency_key": { "type": "string" }
+  },
+  "additionalProperties": false
+}

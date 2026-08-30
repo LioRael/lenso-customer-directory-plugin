@@ -1,0 +1,29 @@
+{
+  "id": "lenso.customer-directory@1",
+  "version": "1.0.0",
+  "portable": true,
+  "cross_lane_transfer": true,
+  "operations": [
+    {
+      "name": "resolve_or_create_email_contact",
+      "interaction": "request",
+      "request_schema": "schemas/resolve-or-create-email-contact-request.schema.json",
+      "response_schema": "schemas/resolve-or-create-email-contact-response.schema.json",
+      "domain_error_schema": "schemas/resolve-or-create-email-contact-error.schema.json"
+    },
+    {
+      "name": "get_contact",
+      "interaction": "request",
+      "request_schema": "schemas/get-contact-request.schema.json",
+      "response_schema": "schemas/get-contact-response.schema.json",
+      "domain_error_schema": "schemas/get-contact-error.schema.json"
+    },
+    {
+      "name": "merge_contact",
+      "interaction": "request",
+      "request_schema": "schemas/merge-contact-request.schema.json",
+      "response_schema": "schemas/merge-contact-response.schema.json",
+      "domain_error_schema": "schemas/merge-contact-error.schema.json"
+    }
+  ]
+}

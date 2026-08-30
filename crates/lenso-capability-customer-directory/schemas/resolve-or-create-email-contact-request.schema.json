@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["organization_id", "email", "idempotency_key"],
+  "properties": {
+    "organization_id": { "type": "string" },
+    "email": { "type": "string", "x-lenso-sensitive": true },
+    "display_name": { "type": "string", "x-lenso-sensitive": true },
+    "idempotency_key": { "type": "string" }
+  },
+  "additionalProperties": false
+}

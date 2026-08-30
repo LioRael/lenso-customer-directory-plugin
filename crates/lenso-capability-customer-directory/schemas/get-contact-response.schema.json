@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["contact"],
+  "properties": {
+    "contact": { "$ref": "#/$defs/Contact" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "Contact": {
+      "type": "object",
+      "required": ["contact_id", "organization_id", "email", "display_name", "state", "canonical_contact_id", "revision", "created_at", "updated_at"],
+      "properties": {
+        "contact_id": { "type": "string" },
+        "organization_id": { "type": "string" },
+        "email": { "type": "string", "x-lenso-sensitive": true },
+        "display_name": { "type": ["string", "null"], "x-lenso-sensitive": true },
+        "state": { "type": "string", "enum": ["active", "merged"] },
+        "canonical_contact_id": { "type": "string" },
+        "revision": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
