@@ -1,6 +1,6 @@
 [package]
 name = "lenso-customer-directory-postgres-plugin"
-version = "0.1.2"
+version = "0.1.3"
 description = "PostgreSQL-backed Customer Directory Plugin for Lenso applications."
 edition.workspace = true
 license.workspace = true
@@ -22,7 +22,7 @@ futures.workspace = true
 lenso.workspace = true
 lenso-auth-sdk.workspace = true
 lenso-capability-access-control.workspace = true
-lenso-capability-customer-directory = { version = "0.1.2", path = "../lenso-capability-customer-directory" }
+lenso-capability-customer-directory = { version = "0.1.3", path = "../lenso-capability-customer-directory" }
 lenso-capability-data-export-source.workspace = true
 lenso-capability-retention-participant.workspace = true
 lenso-capability-secrets.workspace = true
