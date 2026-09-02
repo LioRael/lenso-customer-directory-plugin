@@ -21,7 +21,7 @@ if [[ "$actual_path_dependencies" != "$expected_path_dependencies" ]]; then
   exit 1
 fi
 
-# Immutable remote suite dependencies must not pull another copy of the
+# Released suite dependencies must not pull another copy of the
 # Kernel/runtime/protocol contracts into this process graph.
 cargo_bin="${LENSO_CARGO_BIN:-cargo}"
 metadata="$($cargo_bin metadata --locked --format-version=1)"
@@ -35,7 +35,6 @@ single_source_packages=(
   lenso-runtime-codec
   lenso-contract-authoring
   lenso-contract-authoring-macros
-  lenso-contract-codegen
   lenso-contract-runtime
   lenso-plugin-authoring
 )
@@ -50,7 +49,7 @@ done
 for source_family in \
   'lenso,lenso-native-adapter,lenso-native-adapter-macros,lenso-runtime-codec' \
   'lenso-app-plan,lenso-kernel' \
-  'lenso-contract-authoring,lenso-contract-authoring-macros,lenso-contract-codegen,lenso-contract-runtime,lenso-plugin-authoring'; do
+  'lenso-contract-authoring,lenso-contract-authoring-macros,lenso-contract-runtime,lenso-plugin-authoring'; do
   source_count="$(
     jq --arg family "$source_family" '
       ($family | split(",")) as $names
