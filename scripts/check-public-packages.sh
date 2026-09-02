@@ -41,7 +41,6 @@ for package in "${packages[@]}"; do
 done
 
 required_source_set=(
-  crates/lenso-capability-customer-directory/build.rs
   crates/lenso-capability-customer-directory/capability.json
   crates/lenso-capability-customer-directory/schemas/resolve-or-create-email-contact-request.schema.json
   crates/lenso-capability-customer-directory/src/generated.rs
@@ -60,7 +59,7 @@ for source in "${required_source_set[@]}"; do
 done
 
 capability_manifest="$repository_root/crates/lenso-capability-customer-directory/Cargo.toml"
-for packaged_asset in '"build.rs"' '"capability.json"' '"schemas/*.json"' '"src/*.rs"'; do
+for packaged_asset in '"capability.json"' '"schemas/*.json"' '"src/*.rs"'; do
   rg --fixed-strings --quiet "$packaged_asset" "$capability_manifest" || {
     printf 'Capability include set is missing %s\n' "$packaged_asset" >&2
     exit 1
